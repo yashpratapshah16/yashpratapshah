@@ -5,13 +5,16 @@
 html,
 body,
 :root {
-  height: 100%;
   background-color: black;
   color-scheme: dark;
 }
 
 .animate-glow {
   animation: glow 2s ease-in-out infinite;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-600;
 }
 
 @keyframes glow {
