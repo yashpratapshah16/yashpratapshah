@@ -141,7 +141,7 @@ export default function Home() {
                     description: "An online note storing website"
                   },
                   {
-                    name: "Techwizz 7.0 Round-1",
+                    name: "Technowizz 7.0 Round-1",
                     url: "https://technowizz-7-0-round-1.vercel.app",
                     code: "https://github.com/yashpratapshah16/technowizz-7.0-round-1",
                     src: "/images/technowizz7.png",
