@@ -2,21 +2,27 @@
 import { FlipWords } from "@/components/UI/flip-words";
 import { LinkPreview } from "@/components/UI/link-preview";
 import { Timeline } from "@/components/UI/timeline";
+import { cn } from "@/lib/utils";
 import { Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BiUser } from "react-icons/bi";
 import { CgCalendar, CgWebsite } from "react-icons/cg";
 import { CiMail } from "react-icons/ci";
-import { FaChrome, FaCode, FaNodeJs, FaReact, FaTerminal } from "react-icons/fa6";
+import { FaChrome, FaCode, FaMoon, FaNodeJs, FaReact, FaSun, FaTerminal } from "react-icons/fa6";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import { IoTriangle } from "react-icons/io5";
-import { SiClerk, SiCplusplus, SiFirebase, SiMongodb, SiNestjs, SiPostgresql, SiPrisma, SiPython } from "react-icons/si";
+import { SiClerk, SiCplusplus, SiFirebase, SiMongodb, SiNestjs, SiPostgresql, SiPrisma, SiPython, } from "react-icons/si";
 import { VscPreview } from "react-icons/vsc";
 
 
 export default function Home() {
+
   const observerRef = useRef<IntersectionObserver | null>(null);
+
+  const [dark, setDark] = useState(true);
+  const textDark = "text-green-500"
+  const textLight = "text-neutral-800"
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -43,7 +49,12 @@ export default function Home() {
     {
       title: "Project-Based Learning",
       content: (
-        <div className="flex flex-col item-center gap-3 text-gray-400">
+        <div className={
+          cn(
+            "flex flex-col item-center gap-3 ",
+            dark ? "text-gray-400" : textLight
+          )
+        }>
           <p className="flex items-center"><CgCalendar size={20} />Date:07/2022 - present</p>
           <p>
             Self-driven projects aimed at personal skill enhancement
@@ -66,7 +77,12 @@ export default function Home() {
     {
       title: "CODTECH",
       content: (
-        <div className="flex flex-col item-center gap-3 text-gray-400">
+        <div className={
+          cn(
+            "flex flex-col item-center gap-3 ",
+            dark ? "text-gray-400" : textLight
+          )
+        }>
           <p className="flex items-center"><CgCalendar size={20} />Date:04/2025 - 05/2025</p>
           <p>Remote internship for 1 month</p>
           <p>Given Four Tasks to complete</p>
@@ -85,22 +101,34 @@ export default function Home() {
     }
   ]
 
-  return (
-    <div className="relative min-h-screen text-green-400 font-mono bg-black">
 
+  return (
+    <div className={
+      cn(
+        "relative min-h-screen  font-mono transition-colors",
+        dark ? "bg-black " + textDark : "bg-neutral-100 " + textLight
+      )
+    }>
       <div className=" h-screen flex items-center justify-center">
         <div className="relative text-center  z-10 max-w-4xl px-4">
           <FaTerminal className="w-16 h-16 mx-auto mb-8 animate-pulse" />
-          <h1 className="text-5xl md:text-7xl animate-glow tracking-tight mb-8 font-bold">
+          <h1 className={cn(
+            "text-5xl md:text-7xl  tracking-tight mb-8 font-bold gap-5 flex items-center justify-center",
+            dark ? "animate-glowDark" : "animate-glowLight"
+          )}>
             <span>
               Yashpratap
-            </span>{" "}
-            <span className="text-white">
+            </span>
+            <span className={cn(
+              dark ? "text-white" : textDark
+            )}>
               Shah
             </span>
           </h1>
           <div className="text-xl md:text-2xl mb-8 opacity-90">
-            <FlipWords words={["Full Stack Developer ", "Software Engineer"]} />
+            <FlipWords className={cn(
+              dark ? "text-white" : "text-neutral-800"
+            )} words={["Full Stack Developer ", "Software Engineer"]} />
           </div>
           <div className="flex justify-center gap-6">
             {
@@ -116,7 +144,12 @@ export default function Home() {
                   className="group relative p-2 hover:text-white transition-colors"
                 >
                   <item.icon className="w-6 h-6 relative z-10" />
-                  <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform bg-green-400/10" />
+                  <div className={
+                    cn(
+                      "absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform",
+                      dark ? "bg-green-400/10" : "bg-neutral-800"
+                    )
+                  } />
                 </a>
               ))}
           </div>
@@ -127,9 +160,19 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700">
           <div className="flex items-center gap-2 mb-8">
             <BiUser className="w-6 h-6" />
-            <h2 className="text-2xl font-bold text-gradient">About Me</h2>
+            <h2 className={
+              cn(
+                "text-2xl font-bold ",
+                dark ? "text-gradientDark" : "text-gradientLight"
+              )
+            }>About Me</h2>
           </div>
-          <p className=" text-gray-400 leading-relaxed mb-12  animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-100">
+          <p className={
+            cn(
+              "mb-12",
+              dark ? "text-gray-400" : textLight
+            )
+          }>
             Aspiring IT professional with a focus on full-stack development and
             project-based learning, possessing strong expertise in JavaScript and
             Python. Key achievements include developing various real-world
@@ -141,13 +184,18 @@ export default function Home() {
 
             where full-stack websites were successfully built, and multiple self-
             driven projects were developed and documented on GitHub.          </p>
-            <Timeline data={data} />
+          <Timeline dark={dark} data={data} />
           <div className="mb-16">
             <div className="flex items-center gap-2 mx-auto mb-4  animate-on-scroll opacity-0 translate-y-10 transition-all duration-700">
               <FaCode className="w-6 h-6" />
-              <h2 className="text-2xl font-bold text-gradient">Technical Skill</h2>
+              <h2 className={
+                cn(
+                  "text-2xl font-bold ",
+                  dark ? "text-gradientDark" : "text-gradientLight"
+                )
+              }>Technical Skill</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-2 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700">
               {[
                 { icon: FaReact, href: "https://react.dev/", name: "ReactJs" },
                 { icon: IoTriangle, href: "https://nextjs.org/", name: "NextJs" },
@@ -162,9 +210,23 @@ export default function Home() {
                 { icon: SiPrisma, href: "https://www.prisma.io/", name: "Prisma" },
                 { icon: FaChrome, href: "https://www.convex.dev/", name: "Convex" }
               ].map((item, index) => (
-                <LinkPreview url={item.href} key={index} className=" flex items-center rounded-lg text-2xl justify-center w-full my-2 h-full  border gap-2 hover:border-green-500/60 border-green-500/30 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700">
-                  <item.icon className="w-8 h-8 text-green-400" />
-                  <h1 className="text-green-400">
+                <LinkPreview url={item.href} key={index} className={
+                  cn(
+                    " flex items-center rounded-lg text-2xl justify-center w-full my-2 h-full  border gap-2",
+                    dark ? "hover:border-green-500/60 border-green-500/30" : "hover:border-neutral-800/60 border-neutral-800/30"
+                  )
+                }>
+                  <item.icon className={
+                    cn(
+                      "w-8 h-8",
+                      dark ? textDark : textLight
+                    )
+                  } />
+                  <h1 className={
+                    cn(
+                      dark ? textDark : textLight
+                    )
+                  }>
                     {item.name}
                   </h1>
                 </LinkPreview>
@@ -175,9 +237,14 @@ export default function Home() {
           <div className=" mb-16">
             <div className="flex items-center gap-2 mx-auto mb-4  animate-on-scroll opacity-0 translate-y-10 transition-all duration-700">
               <CgWebsite className="w-6 h-6" />
-              <h2 className="text-2xl font-bold text-gradient">Projects</h2>
+              <h2 className={
+                cn(
+                  "text-2xl font-bold ",
+                  dark ? "text-gradientDark" : "text-gradientLight"
+                )
+              }>Projects</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-20 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 ">
               {
                 [
                   {
@@ -244,13 +311,22 @@ export default function Home() {
                     description: "ProductiTrack is a lightweight and efficient Chrome Extension that monitors user activity and tracks the amount of time spent on various websites. Designed with a focus on productivity, the extension helps users understand their browsing habits and distinguish between productive and non-productive usage."
                   },
                 ].map((item, index) => (
-                  <Card key={index} className=" h-fit flex flex-col border border-green-500 hover:border-green-400 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 ">
+                  <Card key={index} className={
+                    cn(
+                      " h-fit flex flex-col border",
+                      dark ? "border-green-500 hover:border-green-400" : "border-neutral-800 hover:border-neutral-500"
+                    )
+                  }>
                     <CardMedia
                       sx={{ height: 200 }}
                       image={item.src}
                       title={item.name}
                     />
-                    <CardContent className="bg-black text-green-400">
+                    <CardContent className={
+                      cn(
+                        dark ? "bg-black " + textDark : "bg-neutral-100 " + textLight
+                      )
+                    }>
                       <Typography gutterBottom variant="h5" component="div">
                         {item.name}
                       </Typography>
@@ -262,14 +338,29 @@ export default function Home() {
                         <div className="flex flex-wrap gap-2">
                           {
                             item.techstacks.map((item, index) => (
-                              <span key={index} className="h-5 w-fit border rounded-full px-2 flex items-center border-green-400">{item}</span>
+                              <span key={index} className={
+                                cn(
+                                  "h-5 w-fit border rounded-full px-2 flex items-center",
+                                  dark ? "border-green-500" : "border-neutral-800"
+                                )
+                              }>{item}</span>
                             ))
                           }
                         </div>
                       </div>
                     </CardContent>
-                    <CardActions className="bg-black text-green-400 flex items-center justify-center">
-                      <a target="_blank" className="group flex justify-center items-center gap-2 hover:text-white" href={item.code}>
+                    <CardActions className={
+                      cn(
+                        "flex items-center justify-center",
+                        dark ? "bg-black " + textDark : "bg-neutral-100 " + textLight
+                      )
+                    }>
+                      <a target="_blank" className={
+                        cn(
+                          "group flex justify-center items-center gap-2 ",
+                          dark ? "hover:text-white" : "hover:text-neutral-500"
+                        )
+                      } href={item.code}>
                         <FiGithub />
                         <span className="relative">
                           Code
@@ -278,7 +369,12 @@ export default function Home() {
                       </a>
                       {
                         item.url &&
-                        <a target="_blank" className="group flex justify-center items-center gap-2 hover:text-white" href={item.url}>
+                        <a target="_blank" className={
+                          cn(
+                            "group flex justify-center items-center gap-2 ",
+                            dark ? "hover:text-white" : "hover:text-neutral-500"
+                          )
+                        } href={item.url}>
                           <VscPreview />
                           <span className="relative">
                             Preview
@@ -294,13 +390,37 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <footer className="py-8 border-t border-green-500/20">
+      <footer className={
+        cn(
+          "py-8 border-t ",
+          dark?"border-green-500/20":"border-neutral-800/20"
+        )
+      }>
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <p className="text-gray-400">
+          <p className={
+            cn(
+              dark?"text-gray-400":"text-neutral-800"
+            )
+          }>
             © {new Date().getFullYear()} Yashpratp Shah. Built with Nextjs & Tailwind CSS.
           </p>
         </div>
       </footer>
+      <div onClick={() => setDark((val) => !val)}
+        className={
+          cn(
+            "fixed hover:cursor-pointer h-12 w-12 rounded-full  transition-all flex items-center justify-center  bottom-6 right-6",
+            dark ? "bg-neutral-800 hover:bg-neutral-900" : " bg-neutral-400 hover:bg-neutral-500"
+          )
+        }
+      >
+        {
+          dark ?
+            <FaMoon className="text-green-500" size={20} />
+            :
+            <FaSun className="text-neutral-800" size={20} />
+        }
+      </div>
     </div>
   );
 }

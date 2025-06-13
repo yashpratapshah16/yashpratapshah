@@ -9,20 +9,37 @@ body,
   color-scheme: dark;
 }
 
-.animate-glow {
-  animation: glow 2s ease-in-out infinite;
+.animate-glowDark {
+  animation: glowDark 2s ease-in-out infinite;
 }
 
-.text-gradient {
+.text-gradientDark {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-600;
 }
 
-@keyframes glow {
+@keyframes glowDark {
   0%,
   100% {
     text-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
   }
   50% {
     text-shadow: 0 0 40px rgba(74, 222, 128, 0.8);
+  }
+}
+.animate-glowLight {
+  animation: glowLight 2s ease-in-out infinite;
+}
+
+.text-gradientLight {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-neutral-400 to-neutral-600;
+}
+
+@keyframes glowLight {
+  0%,
+  100% {
+    text-shadow: 0 0 20px rgba(38, 38, 38, 0.5)					;
+  }
+  50% {
+    text-shadow: 0 0 40px rgba(38, 38, 38, 1)					;
   }
 }
