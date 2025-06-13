@@ -113,11 +113,11 @@ export default function Home() {
         <div className="relative text-center  z-10 max-w-4xl px-4">
           <FaTerminal className="w-16 h-16 mx-auto mb-8 animate-pulse" />
           <h1 className={cn(
-            "text-5xl md:text-7xl  tracking-tight mb-8 font-bold gap-5 flex items-center justify-center",
+            "text-5xl md:text-7xl  tracking-tight mb-8 font-bold",
             dark ? "animate-glowDark" : "animate-glowLight"
           )}>
             <span>
-              Yashpratap
+              Yashpratap{" "}
             </span>
             <span className={cn(
               dark ? "text-white" : textDark
