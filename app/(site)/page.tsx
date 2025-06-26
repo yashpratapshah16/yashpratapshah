@@ -290,7 +290,6 @@ export default function Home() {
                   {
                     name: "QuickTalk",
                     url: "https://quicktalk-blue.vercel.app/",
-                    code: "https://github.com/yashpratapshah16/quicktalk",
                     src: "/images/quicktalk.png",
                     techstacks: ["Reactjs", "Nextjs", "Tailwind", "Firebase", "Socket.io"],
                     description: "A real-time chat application built with modern full-stack technologies for seamless one-to-one communication. Designed with performance, responsiveness, and scalability in mind, QuickTalk offers a lightweight, intuitive, and real-time messaging experience."
