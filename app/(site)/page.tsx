@@ -4,7 +4,6 @@ import { LinkPreview } from "@/components/UI/link-preview";
 import { Timeline } from "@/components/UI/timeline";
 import { cn } from "@/lib/utils";
 import { Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { BiUser } from "react-icons/bi";
 import { CgCalendar, CgWebsite } from "react-icons/cg";
