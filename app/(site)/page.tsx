@@ -74,31 +74,6 @@ export default function Home() {
         </div>
       )
     },
-    {
-      title: "CODTECH",
-      content: (
-        <div className={
-          cn(
-            "flex flex-col item-center gap-3 ",
-            dark ? "text-gray-400" : textLight
-          )
-        }>
-          <p className="flex items-center"><CgCalendar size={20} />Date:04/2025 - 05/2025</p>
-          <p>Remote internship for 1 month</p>
-          <p>Given Four Tasks to complete</p>
-          <p>Built various Full stack websites independently</p>
-          <p>Learned various features over the past month</p>
-          <p>All projects are on my GitHub with documentation</p>
-          <p>Certificate:</p>
-          <Image
-            alt="certificate"
-            src="/images/codtech.png"
-            height={500}
-            width={400}
-          />
-        </div>
-      )
-    }
   ]
 
 
