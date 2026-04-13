@@ -31,9 +31,12 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn("antialiased", fontMono.variable, "font-sans", publicSans.variable, notoSansHeading.variable)}
     >
-      <body className="min-h-screen overflow-hidden">
+      <body className="min-h-screen">
         <ThemeProvider>{children}</ThemeProvider>
         <Dock />
+        <div className="absolute inset-0 -z-10">
+        <div className="absolute w-[70vw] h-[70vh] bg-primary/20 blur-3xl rounded-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+      </div>
       </body>
     </html>
   )

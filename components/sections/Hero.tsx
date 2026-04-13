@@ -84,10 +84,7 @@ export default function Hero() {
         className="absolute grayscale dark:grayscale-0 translate-y-[-80%] md:translate-y-[-2%] z-0 w-70 md:w-[50vw] pointer-events-none select-none"
       />
 
-      {/* BACKGROUND GLOW (keep subtle) */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute w-[70vw] h-[70vh] bg-primary/20 blur-3xl rounded-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
-      </div>
+      
 
     </section>
   );

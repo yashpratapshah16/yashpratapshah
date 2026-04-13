@@ -2,11 +2,13 @@
 
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { FiHome, FiUser, FiCode, FiFolder, FiMail } from "react-icons/fi";
+import { MdOutlineWorkHistory } from "react-icons/md";
 
 export default function Dock() {
   const items = [
     { title: "Home", icon: <FiHome />, href: "/" },
     { title: "About", icon: <FiUser />, href: "/about" },
+    { title: "Experience", icon: <MdOutlineWorkHistory />, href: "/experience" },
     { title: "Tech", icon: <FiCode />, href: "/tech" },
     { title: "Projects", icon: <FiFolder />, href: "/projects" },
     { title: "Contact", icon: <FiMail />, href: "/contact" },
