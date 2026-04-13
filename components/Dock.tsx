@@ -1,7 +1,8 @@
 "use client";
 
 import { FloatingDock } from "@/components/ui/floating-dock";
-import { FiHome, FiUser, FiCode, FiFolder, FiMail } from "react-icons/fi";
+import { FaCode } from "react-icons/fa";
+import { FiHome, FiUser,FiFolder, FiMail } from "react-icons/fi";
 import { MdOutlineWorkHistory } from "react-icons/md";
 
 export default function Dock() {
@@ -9,9 +10,8 @@ export default function Dock() {
     { title: "Home", icon: <FiHome />, href: "/" },
     { title: "About", icon: <FiUser />, href: "/about" },
     { title: "Experience", icon: <MdOutlineWorkHistory />, href: "/experience" },
-    { title: "Tech", icon: <FiCode />, href: "/tech" },
+    { title: "Technical Skills", icon: <FaCode />, href: "/technical-skills" },
     { title: "Projects", icon: <FiFolder />, href: "/projects" },
-    { title: "Contact", icon: <FiMail />, href: "/contact" },
   ];
 
   return (

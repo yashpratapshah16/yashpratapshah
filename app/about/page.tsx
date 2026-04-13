@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { FiUser } from "react-icons/fi";
 
 export default function AboutPage() {
     return (
@@ -10,7 +11,7 @@ export default function AboutPage() {
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-center max-w-3xl"
+                className="text-center max-w-3xl "
             >
                 <motion.h1
                     initial={{ opacity: 0, y: 30 }}
@@ -18,9 +19,10 @@ export default function AboutPage() {
                     className="
                         text-5xl md:text-7xl font-bold
                         bg-gradient-to-r from-primary to-foreground dark:to-white
-                        bg-clip-text text-transparent
+                        bg-clip-text text-transparent flex items-center justify-center gap-4
                         "
                 >
+                   <FiUser className="text-primary"/>
                     About Me
                 </motion.h1>
 
