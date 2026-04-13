@@ -1,0 +1,28 @@
+"use client";
+
+import { FloatingDock } from "@/components/ui/floating-dock";
+import { FiHome, FiUser, FiCode, FiFolder, FiMail } from "react-icons/fi";
+
+export default function Dock() {
+  const items = [
+    { title: "Home", icon: <FiHome />, href: "/" },
+    { title: "About", icon: <FiUser />, href: "/about" },
+    { title: "Tech", icon: <FiCode />, href: "/tech" },
+    { title: "Projects", icon: <FiFolder />, href: "/projects" },
+    { title: "Contact", icon: <FiMail />, href: "/contact" },
+  ];
+
+  return (
+    <>
+      {/* Desktop Dock (center bottom) */}
+      <div className="hidden md:flex fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
+        <FloatingDock items={items} />
+      </div>
+
+      {/* Mobile Dock (right side floating button) */}
+      <div className="md:hidden fixed bottom-6 right-4 z-50">
+        <FloatingDock items={items} />
+      </div>
+    </>
+  );
+}
