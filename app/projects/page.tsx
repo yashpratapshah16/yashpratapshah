@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink } from "lucide-react";
@@ -126,7 +127,7 @@ export default function ProjectsPage() {
 
                 {/* HEADER */}
                 <div className="text-center mb-12">
-                    <h1 className="text-4xl md:text-5xl flex items-center justify-center gap-2 font-bold bg-gradient-to-r from-primary to-foreground dark:to-white bg-clip-text text-transparent">
+                    <h1 className="text-4xl md:text-5xl flex items-center justify-center gap-2 font-bold bg-linear-to-r from-primary to-foreground dark:to-white bg-clip-text text-transparent">
                         <FiFolder className="text-primary" />Projects
                     </h1>
                 </div>
@@ -169,12 +170,12 @@ export default function ProjectsPage() {
                                 {/* TECH */}
                                 <div className="flex flex-wrap gap-2">
                                     {project.techstacks.map((tech) => (
-                                        <span
+                                        <Badge variant={"outline"}
                                             key={tech}
-                                            className="text-xs px-3 py-1 rounded-full border border-border text-muted-foreground"
+                                            className="text-xs  px-3 py-1 rounded-full border-black dark:border-border"
                                         >
                                             {tech}
-                                        </span>
+                                        </Badge>
                                     ))}
                                 </div>
 
@@ -196,7 +197,7 @@ export default function ProjectsPage() {
                                     <a
                                         href={project.code}
                                         target="_blank"
-                                        className=" px-4 py-2 rounded-lg border border-border text-sm flex items-center gap-1"
+                                        className=" px-4 py-2 bg-muted rounded-lg border border-border text-sm flex items-center gap-1"
                                     >
                                         <SiGithub size={15} />
                                         Code
@@ -233,7 +234,7 @@ export default function ProjectsPage() {
                         <div
                             onClick={()=>setIndex(i)}
                             key={i}
-                            className={`h-2 w-2 rounded-full cursor-pointer ${i === index ? "bg-primary" : "bg-muted"
+                            className={`h-2 w-2 rounded-full cursor-pointer ${i === index ? "bg-primary" : " bg-white dark:bg-muted"
                                 }`}
                         />
                     ))}

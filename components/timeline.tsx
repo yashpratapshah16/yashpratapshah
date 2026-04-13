@@ -24,7 +24,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 <div className="max-w-7xl mx-auto py-6 px-6 text-center">
                     <h2 className="flex items-center justify-center gap-2 text-4xl md:text-6xl font-bold">
                         <MdOutlineWorkHistory className="text-primary" />
-                        <span className="bg-gradient-to-r from-primary to-foreground dark:to-white bg-clip-text text-transparent">
+                        <span className="bg-linear-to-r from-primary to-foreground dark:to-white bg-clip-text text-transparent">
                             Experience
                         </span>
                     </h2>
@@ -44,7 +44,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             </motion.div>
 
             {/* ✅ BOTTOM FADE */}
-            <div className="fixed bottom-0 left-0 w-full h-24 bg-gradient-to-t from-background to-transparent pointer-events-none z-40" />
+            <div className="fixed bottom-0 left-0 w-full h-24 bg-linear-to-t from-background to-transparent pointer-events-none z-40" />
 
             {/* ✅ SECTIONS */}
             <div className="snap-y snap-mandatory">
@@ -76,7 +76,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                     <div className="w-full flex items-center gap-4 px-6">
 
                         {/* LEFT LINE */}
-                        <div className="flex-1 h-[1px] bg-border" />
+                        <div className="flex-1 h-px bg-border" />
 
                         {/* TEXT */}
                         <span className="text-lg text-muted-foreground tracking-widest uppercase opacity-70">
@@ -84,7 +84,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                         </span>
 
                         {/* RIGHT LINE */}
-                        <div className="flex-1 h-[1px] bg-border" />
+                        <div className="flex-1 h-px bg-border" />
 
                     </div>
                 </section>

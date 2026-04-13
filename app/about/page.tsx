@@ -18,7 +18,7 @@ export default function AboutPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="
                         text-5xl md:text-7xl font-bold
-                        bg-gradient-to-r from-primary to-foreground dark:to-white
+                        bg-linear-to-r from-primary to-foreground dark:to-white
                         bg-clip-text text-transparent flex items-center justify-center gap-4
                         "
                 >

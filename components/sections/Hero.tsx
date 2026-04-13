@@ -18,7 +18,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-[clamp(3rem,8vw,7rem)] font-bold leading-tight 
-          bg-gradient-to-r from-primary to-black dark:to-primary-foreground 
+          bg-linear-to-r from-primary to-black dark:to-primary-foreground 
           bg-clip-text text-transparent "
         >
           Yashpratap Shah
