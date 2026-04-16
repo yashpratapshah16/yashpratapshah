@@ -86,7 +86,7 @@ export default function TechPage() {
             {/* HEADER */}
             <div className="text-center max-w-2xl">
                 <h1 className="text-4xl md:text-5xl flex items-center gap-2 font-bold bg-linear-to-r from-primary to-foreground bg-clip-text text-transparent">
-                    <FaCode className="text-primary"/>Technical Skills
+                    <FaCode size={50} className="text-primary"/>Technical Skills
                 </h1>
                 <p className="mt-4 text-muted-foreground">
                     Technologies I use regularly in production.

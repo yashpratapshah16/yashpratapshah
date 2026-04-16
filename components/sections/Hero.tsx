@@ -41,7 +41,7 @@ export default function Hero() {
               icon: FiLinkedin,
               href: "https://www.linkedin.com/in/yashpratap-shah-145953255/",
             },
-            { icon: CiMail, href: "mailto:yashpratapshah@gmail.com" },
+            { icon: CiMail, href: "mailto:yashpratapshah16@gmail.com" },
           ].map((item, index) => (
             <a
               key={index}

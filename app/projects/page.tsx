@@ -212,33 +212,34 @@ export default function ProjectsPage() {
                 </div>
 
                 {/* NAV */}
-                <div className="flex justify-between mt-10">
+                <div className="flex items-center justify-between mt-10">
                     <Button
                         onClick={prev}
-                        className="px-4 cursor-pointer py-2 border border-border rounded-lg hover:bg-muted transition"
                     >
                         ← Prev
+
                     </Button>
+
+                    {/* DOTS */}
+                    <div className="flex items-center justify-center gap-2">
+                        {projects.map((_, i) => (
+                            <div
+                                onClick={() => setIndex(i)}
+                                key={i}
+                                className={`h-2 w-2 rounded-full cursor-pointer ${i === index ? "bg-primary" : " bg-white dark:bg-muted"
+                                    }`}
+                            />
+                        ))}
+                    </div>
 
                     <Button
                         onClick={next}
-                        className="px-4 cursor-pointer py-2 border border-border rounded-lg hover:bg-muted transition"
                     >
                         Next →
                     </Button>
                 </div>
 
-                {/* DOTS */}
-                <div className="flex justify-center gap-2 mt-6">
-                    {projects.map((_, i) => (
-                        <div
-                            onClick={()=>setIndex(i)}
-                            key={i}
-                            className={`h-2 w-2 rounded-full cursor-pointer ${i === index ? "bg-primary" : " bg-white dark:bg-muted"
-                                }`}
-                        />
-                    ))}
-                </div>
+
 
             </div>
         </section>
